@@ -10,7 +10,7 @@ It add Users and Auth endpoints to your Slim Api project.
 ## Installing
 In your slim api project
 ```bash
-make endpoint users
+make endpoint-users
 ```
 
 Add the new endpoints on public/index.php
@@ -21,3 +21,8 @@ $app = (new App($config))
     ->addEndpoint(Api\Users\Routes\Users::class); 
 ```
 
+## To do
+* Manage tokens
+* Manage session
+* Manage roles?
+  
