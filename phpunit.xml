@@ -1,0 +1,23 @@
+<phpunit  bootstrap="tests/bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+>
+    <testsuites>
+        <testsuite name="SlimApi">
+            <directory>Tests/app</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>src/</directory>
+            <directory>tests/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
