@@ -7,6 +7,11 @@ use Api\Route;
 
 class Authentication extends Route
 {
+
+    protected $migration = null;
+
+    protected $seed = null;
+
     public function render(): void
     {
         $app = $this->app;

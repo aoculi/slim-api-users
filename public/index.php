@@ -6,14 +6,19 @@
 
 use Api\App;
 
-require '../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-session_start();
+if (php_sapi_name() !== 'cli') {
+    session_start();
+}
 
-$config = require '../config/settings.php';
+$config = require dirname(__DIR__) . '/config/settings.php';
 
 $app = (new App($config))
     ->addEndpoint(Api\Endpoints\Authentication\Routes\Authentication::class)
     ->addEndpoint(Api\Endpoints\Users\Routes\Users::class);
 
-$app->run();
+// Do not run the app if we are using cli
+if (php_sapi_name() !== 'cli') {
+    $app->run();
+}
